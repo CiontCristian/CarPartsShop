@@ -6,7 +6,7 @@ import {Invoice} from "../model/invoice/invoice";
 @Injectable({
   providedIn: 'root'
 })
-export class CarPartServiceService {
+export class CarPartService {
 
   private readonly carPartUrl: string;
 
@@ -15,11 +15,11 @@ export class CarPartServiceService {
   }
 
   public getCarParts() {
-    return this.http.get<CarPartServiceService[]>(this.carPartUrl+"/findAll");
+    return this.http.get<CarPart[]>(this.carPartUrl+"/findAll");
   }
 
   public getCarPartForCar(carId: Number) {
-    return this.http.get<CarPartServiceService[]>(`${this.carPartUrl+"/findCarPartsForCar/"}/${carId}`);
+    return this.http.get<CarPart[]>(`${this.carPartUrl+"/findCarPartsForCar/"}/${carId}`);
   }
 
   public saveCarPart(carPart: CarPart) {

@@ -5,7 +5,7 @@ import {Car} from "../model/car/car";
 @Injectable({
   providedIn: 'root'
 })
-export class CarServiceService {
+export class CarService {
   private readonly carUrl: string;
 
   constructor(private http: HttpClient) {
