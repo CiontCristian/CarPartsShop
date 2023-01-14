@@ -14,8 +14,8 @@ export class CustomerService {
     this.validateCustomerUrl = "http://localhost:8080/customer/validateCredentials/"
   }
 
-  public validateCredentials(email: string): Observable<Customer[]> {
-      return this.http.get<Customer[]>(`${this.validateCustomerUrl}/${email}`);
+  public validateCredentials(email: string): Observable<boolean> {
+      return this.http.get<boolean>(`${this.validateCustomerUrl}/${email}`);
     }
 
 }
