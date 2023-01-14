@@ -28,9 +28,9 @@ public class CarPartController {
         return new ResponseEntity<>(carPartService.findAll(), HttpStatus.OK);
     }
 
-    @GetMapping("/findCarPartsForCar/{carPartId}")
-    public ResponseEntity<List<CarPart>> findCarPartsForCar(@PathVariable Long carPartId){
-        return new ResponseEntity<>(carPartService.findCarPartsForCar(carPartId), HttpStatus.OK);
+    @GetMapping("/findCarPartsForCar/{carId}")
+    public ResponseEntity<List<CarPart>> findCarPartsForCar(@PathVariable Long carId){
+        return new ResponseEntity<>(carPartService.findCarPartsForCar(carId), HttpStatus.OK);
     }
 
     @GetMapping("/findAllInvoices")

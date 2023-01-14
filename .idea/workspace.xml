@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ce148fc1-dcba-4beb-89ec-d6fd78b74d00" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/carpartsshop/angularclient/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carpartsshop/angularclient/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carpartsshop/angularclient/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carpartsshop/angularclient/angular.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carpartsshop/angularclient/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carpartsshop/angularclient/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carpartsshop/angularclient/src/app/app-routing.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carpartsshop/angularclient/src/app/app.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carpartsshop/angularclient/src/app/app.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carpartsshop/angularclient/src/app/app.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carpartsshop/angularclient/src/app/app.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carpartsshop/angularclient/src/app/app.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carpartsshop/angularclient/src/app/model/car/car.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carpartsshop/angularclient/src/app/model/car/car.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carpartsshop/angularclient/src/app/model/carPart/car-part.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carpartsshop/angularclient/src/app/model/carPart/car-part.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carpartsshop/angularclient/src/app/model/customer/customer.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carpartsshop/angularclient/src/app/model/customer/customer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carpartsshop/angularclient/src/app/model/invoice/invoice.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carpartsshop/angularclient/src/app/model/invoice/invoice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carpartsshop/angularclient/src/assets/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carpartsshop/angularclient/src/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carpartsshop/angularclient/src/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carpartsshop/angularclient/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carpartsshop/angularclient/src/styles.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carpartsshop/angularclient/tsconfig.app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carpartsshop/angularclient/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carpartsshop/angularclient/tsconfig.spec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carpartsshop/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/carpartsshop/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carpartsshop/src/main/resources/data.sql" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.3\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2KKPdeU7lwB1nVSlcLOOsHx2TCO" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/carpartsshop" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ce148fc1-dcba-4beb-89ec-d6fd78b74d00" name="Default Changelist" comment="" />
+      <created>1673720391576</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1673720391576</updated>
+      <workItem from="1673720394866" duration="20000" />
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="421" y="92" key="FileChooserDialogImpl" timestamp="1673720413554">
+      <screen x="0" y="0" width="1280" height="672" />
+    </state>
+    <state x="421" y="92" key="FileChooserDialogImpl/0.0.1280.672@0.0.1280.672" timestamp="1673720413554" />
+  </component>
+</project>
