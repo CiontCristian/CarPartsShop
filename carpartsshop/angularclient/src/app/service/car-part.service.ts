@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpResponse} from "@angular/common/http";
 import {CarPart} from "../model/carPart/car-part";
 import {Invoice} from "../model/invoice/invoice";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -14,12 +15,12 @@ export class CarPartService {
     this.carPartUrl="http://localhost:8080/carpart";
   }
 
-  public getCarParts() {
-    return this.http.get<CarPart[]>(this.carPartUrl+"/findAll");
+  public getCarParts() :Observable<HttpResponse<CarPart[]>>{
+    return this.http.get<CarPart[]>(this.carPartUrl+"/findAll", {observe: "response"});
   }
 
-  public getCarPartForCar(carId: Number) {
-    return this.http.get<CarPart[]>(`${this.carPartUrl+"/findCarPartsForCar/"}/${carId}`);
+  public getCarPartForCar(carId: number | undefined): Observable<HttpResponse<CarPart[]>> {
+    return this.http.get<CarPart[]>(`${this.carPartUrl+"/findCarPartsForCar"}/${carId}`, {observe: "response"});
   }
 
   public saveCarPart(carPart: CarPart) {

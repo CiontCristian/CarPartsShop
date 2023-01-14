@@ -1,3 +1,26 @@
-<div>
 
-</div>
+<ul>
+  <div  *ngFor="let car of cars;index as indexOfCar;">
+    <mat-accordion>
+      <mat-expansion-panel *ngIf="carParts !== null" hideToggle (opened)="getCarPartForCar(car.id, indexOfCar)">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{car.make}} - {{car.model}}
+          </mat-panel-title>
+          <mat-panel-description>
+            {{car.fuelType}}
+            {{car.year}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <ng-template matExpansionPanelContent>
+          <ul class="car-parts-ul">
+            <div  *ngFor="let carPart of carParts[indexOfCar]">
+              <app-car-part-card [carPart]="carPart"></app-car-part-card>
+            </div>
+          </ul>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</ul>
+
