@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -20,4 +22,7 @@ public class Invoice {
     @MapsId("carPartId")
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private CarPart carPart;
+
+    private String details;
+    private Date date;
 }
