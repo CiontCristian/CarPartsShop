@@ -5,7 +5,7 @@
     <div matListItemTitle>{{invoice.details}}</div>
     <div matListItemLine>{{invoice.customer!.email}}</div>
     <div matListItemLine>{{invoice.date | date}}</div>
-    <div matListItemLine>{{invoice.carPart!.name}}</div>
+    <div matListItemLine>{{invoice.carPart!.name}} --> {{invoice.carPart!.car!.make}} {{invoice.carPart!.car!.model}}</div>
   </mat-list-item>
   <mat-divider></mat-divider>
 </mat-list>
