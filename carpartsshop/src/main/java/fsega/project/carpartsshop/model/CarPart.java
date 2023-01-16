@@ -16,6 +16,7 @@ public class CarPart extends BaseEntity{
     private String name;
     private Double price;
     private String description;
+    private Integer stock;
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Car car;
 }

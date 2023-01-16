@@ -16,6 +16,15 @@ import {MatDividerModule} from "@angular/material/divider";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatExpansionModule} from "@angular/material/expansion";
 import { CarPartCardComponent } from './components/car-part-card/car-part-card.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import { CarAddComponent } from './components/car-add/car-add.component';
+import {MatIconModule} from "@angular/material/icon";
+import {MatButtonModule} from "@angular/material/button";
+import {MatInputModule} from "@angular/material/input";
+import {FormsModule} from "@angular/forms";
+import { CarPartAddComponent } from './components/car-part-add/car-part-add.component';
+import { InvoiceAddComponent } from './components/invoice-add/invoice-add.component';
+import {MatListModule} from "@angular/material/list";
 
 @NgModule({
   declarations: [
@@ -23,6 +32,9 @@ import { CarPartCardComponent } from './components/car-part-card/car-part-card.c
     CarPartShopMainPageComponent,
     ToolbarComponent,
     CarPartCardComponent,
+    CarAddComponent,
+    CarPartAddComponent,
+    InvoiceAddComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +45,13 @@ import { CarPartCardComponent } from './components/car-part-card/car-part-card.c
     MatCardModule,
     MatDividerModule,
     MatSidenavModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatDialogModule,
+    MatIconModule,
+    MatButtonModule,
+    MatInputModule,
+    FormsModule,
+    MatListModule
   ],
   providers: [CarService, CarPartService, CustomerService],
   bootstrap: [AppComponent]

@@ -4,12 +4,18 @@
       <p>{{carPart.name}}</p>
     </mat-card-title>
     <mat-card-subtitle>
-      <p>-{{carPart.price}}</p>
+      <p>{{carPart.price}}$</p>
     </mat-card-subtitle>
   </mat-card-header>
   <mat-card-content style="text-align: left">
     <img style="width: 100px;height: 100px;text-align: center;" src="assets/engine.jpg" alt="Generic Engine">
     <br>
+    Available stock: {{carPart.stock}}
+    <br>
     {{carPart.description}}
+    <br>
+    <button mat-mini-fab color="accent" (click)="openAddInvoice(carPart)">
+      <mat-icon>add</mat-icon>
+    </button>
   </mat-card-content>
 </mat-card>

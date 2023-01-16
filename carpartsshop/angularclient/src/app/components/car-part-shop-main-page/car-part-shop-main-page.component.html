@@ -1,4 +1,17 @@
+<h1>Invoices</h1>
+<mat-list>
+  <mat-list-item *ngFor="let invoice of invoices">
+    <mat-icon matListItemIcon>folder</mat-icon>
+    <div matListItemTitle>{{invoice.details}}</div>
+    <div matListItemLine>{{invoice.customer!.email}}</div>
+    <div matListItemLine>{{invoice.date | date}}</div>
+    <div matListItemLine>{{invoice.carPart!.name}}</div>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+</mat-list>
 
+<mat-divider></mat-divider>
+<h1>Cars</h1>
 <ul>
   <div  *ngFor="let car of cars;index as indexOfCar;">
     <mat-accordion>
@@ -10,9 +23,14 @@
           <mat-panel-description>
             {{car.fuelType}}
             {{car.year}}
+            <span></span>
+            <button mat-mini-fab color="white" (click)="openAddCarPartDialog(car)">
+              <mat-icon>add</mat-icon>
+            </button>
           </mat-panel-description>
         </mat-expansion-panel-header>
         <ng-template matExpansionPanelContent>
+
           <ul class="car-parts-ul">
             <div  *ngFor="let carPart of carParts[indexOfCar]">
               <app-car-part-card [carPart]="carPart"></app-car-part-card>

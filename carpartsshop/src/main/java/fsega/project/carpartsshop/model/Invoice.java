@@ -16,7 +16,7 @@ public class Invoice {
     private InvoiceKey invoiceKey;
 
     @MapsId("customerId")
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER)
     private Customer customer;
 
     @MapsId("carPartId")

@@ -5,10 +5,13 @@ import fsega.project.carpartsshop.model.CarPart;
 import fsega.project.carpartsshop.model.Invoice;
 import fsega.project.carpartsshop.model.InvoiceKey;
 import fsega.project.carpartsshop.service.CarPartService;
+import fsega.project.carpartsshop.service.CustomerService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,10 +20,12 @@ import java.util.List;
 @RequestMapping("/carpart")
 public class CarPartController {
     private final CarPartService carPartService;
+    private final CustomerService customerService;
 
     @Autowired
-    public CarPartController(CarPartService carPartService) {
+    public CarPartController(CarPartService carPartService, CustomerService customerService) {
         this.carPartService = carPartService;
+        this.customerService = customerService;
     }
 
     @GetMapping("/findAll")
@@ -46,8 +51,16 @@ public class CarPartController {
 
     @PostMapping("/saveInvoice")
     public ResponseEntity<?> saveInvoice(@RequestBody Invoice invoice){
-        InvoiceKey invoiceKey = new InvoiceKey(invoice.getCarPart().getId(), invoice.getCustomer().getId());
+        System.out.println(invoice);
+        if(!customerService.validateCredentials(invoice.getCustomer().getEmail()))
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        if(!carPartService.checkCarPartStock(invoice.getCarPart().getId()))
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+
+        Long customerId = customerService.findByEmail(invoice.getCustomer().getEmail()).get().getId();
+        InvoiceKey invoiceKey = new InvoiceKey(customerId,invoice.getCarPart().getId());
         invoice.setInvoiceKey(invoiceKey);
+        invoice.getCustomer().setId(customerId);
         carPartService.saveInvoice(invoice);
         return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }

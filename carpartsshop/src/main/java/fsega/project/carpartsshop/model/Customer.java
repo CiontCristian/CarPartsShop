@@ -17,6 +17,4 @@ import java.util.Date;
 public class Customer extends BaseEntity{
     @Column(unique = true)
     private String email;
-    private String name;
-    private Integer age;
 }

@@ -5,8 +5,10 @@ import fsega.project.carpartsshop.model.Invoice;
 import fsega.project.carpartsshop.repository.CarPartRepository;
 import fsega.project.carpartsshop.repository.CarRepository;
 import fsega.project.carpartsshop.repository.InvoiceRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Objects;
@@ -39,9 +41,14 @@ public class CarPartService {
     public List<Invoice> findAllInvoices(){
         return (List<Invoice>) invoiceRepository.findAll();
     }
-
+    @Transactional
     public void saveInvoice(Invoice invoice){
+        invoice.getCarPart().setStock(invoice.getCarPart().getStock() - 1);
         invoiceRepository.save(invoice);
+    }
+
+    public boolean checkCarPartStock(Long id){
+        return (carPartRepository.findById(id).get().getStock() - 1) >= 0;
     }
 
 }

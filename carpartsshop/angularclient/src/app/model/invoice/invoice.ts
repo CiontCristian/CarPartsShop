@@ -3,17 +3,18 @@ import {Customer} from "../customer/customer";
 
 export class Invoice {
   invoiceKey: InvoiceKey | undefined;
+  customer: Customer | undefined;
+  carPart: CarPart | undefined;
   details: string | undefined;
   date: Date | undefined;
-  carPart: CarPart | undefined;
-  customer: Customer | undefined;
 
-  constructor(invoiceKey: InvoiceKey | undefined, details: string | undefined, date: Date | undefined, carPart: CarPart | undefined, customer: Customer | undefined) {
+
+  constructor(invoiceKey: InvoiceKey | undefined, customer: Customer | undefined, carPart: CarPart | undefined, details: string | undefined, date: Date | undefined) {
     this.invoiceKey = invoiceKey;
+    this.customer = customer;
+    this.carPart = carPart;
     this.details = details;
     this.date = date;
-    this.carPart = carPart;
-    this.customer = customer;
   }
 }
 

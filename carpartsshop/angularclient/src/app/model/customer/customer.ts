@@ -1,14 +1,10 @@
-export class Customer {
-  id: Number | undefined;
+import {BaseEntity} from "../BaseEntity";
+
+export class Customer extends BaseEntity{
   email: string | undefined;
-  name: string | undefined;
-  age: BigInteger | undefined;
 
-
-  constructor(id: Number | undefined, email: string | undefined, name: string | undefined, age: BigInteger | undefined) {
-    this.id = id;
+  constructor(id: number, email: string | undefined) {
+    super(id);
     this.email = email;
-    this.name = name;
-    this.age = age;
   }
 }

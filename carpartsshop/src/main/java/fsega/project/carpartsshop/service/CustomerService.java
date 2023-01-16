@@ -19,4 +19,8 @@ public class CustomerService {
     public Boolean validateCredentials(String email){
         return customerRepository.findByEmail(email).isPresent();
     }
+
+    public Optional<Customer> findByEmail(String email){
+        return customerRepository.findByEmail(email);
+    }
 }

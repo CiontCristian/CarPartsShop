@@ -23,16 +23,16 @@ export class CarPartService {
     return this.http.get<CarPart[]>(`${this.carPartUrl+"/findCarPartsForCar"}/${carId}`, {observe: "response"});
   }
 
-  public saveCarPart(carPart: CarPart) {
-    return this.http.post(this.carPartUrl+"/save", carPart);
+  public saveCarPart(carPart: CarPart) : Observable<HttpResponse<any>>{
+    return this.http.post(this.carPartUrl+"/save", carPart, {observe: 'response'});
   }
 
-  public getInvoices() {
-    return this.http.get<Invoice[]>(this.carPartUrl+"/findAllInvoices")
+  public getInvoices() :Observable<HttpResponse<Invoice[]>>{
+    return this.http.get<Invoice[]>(this.carPartUrl+"/findAllInvoices", {observe:"response"})
   }
 
-  public saveCarPartInvoice(invoice: Invoice) {
-    return this.http.post(this.carPartUrl+"/saveInvoice", invoice);
+  public saveCarPartInvoice(invoice: Invoice) :Observable<HttpResponse<any>>{
+    return this.http.post(this.carPartUrl+"/saveInvoice", invoice, {observe: 'response'});
   }
 
 
