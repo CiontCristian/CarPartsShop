@@ -1,0 +1,39 @@
+#USED FOR DEVELOPMENT ENVIRONMENT ONLY
+version: "3.8"
+services:
+
+  angular-service:
+    build:
+      context: ./carpartsshop/angularclient
+    ports:
+      - 4200:4200
+    depends_on:
+      - spring-boot-service 
+
+  spring-boot-service:
+    build: 
+      context: ./carpartsshop
+    ports:
+      - 8080:8080
+    environment:
+        - SPRING_DATASOURCE_URL=jdbc:postgresql://database:5432/carpartsshop
+        - SPRING_DATASOURCE_USERNAME=postgres
+        - SPRING_DATASOURCE_PASSWORD=1234
+    depends_on:
+      - database
+
+  database:
+    image: postgres:14.2
+    container_name: postgresql-db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: carpartsshop
+      restart: always
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-data:
